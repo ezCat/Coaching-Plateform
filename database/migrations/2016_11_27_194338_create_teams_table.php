@@ -18,10 +18,14 @@ class CreateTeamsTable extends Migration
             $table->integer('club_id')->unsigned();
             $table->integer('category_id')->unsigned();
             $table->timestamps();
+        });
 
+        Schema::table('teams', function (Blueprint $table) {
             $table->foreign('club_id')->references('id')->on('clubs');
             $table->foreign('category_id')->references('id')->on('categories');
         });
+
+
     }
 
     /**

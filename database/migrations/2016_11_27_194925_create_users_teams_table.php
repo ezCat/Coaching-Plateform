@@ -17,6 +17,9 @@ class CreateUsersTeamsTable extends Migration
             $table->integer('user_id')->unsigned();
             $table->integer('team_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('users_teams', function (Blueprint $table) {
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('team_id')->references('id')->on('teams');

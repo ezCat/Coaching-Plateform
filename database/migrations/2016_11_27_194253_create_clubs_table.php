@@ -18,7 +18,9 @@ class CreateClubsTable extends Migration
             $table->string('main_color');
             $table->integer('gym_id')->unsigned();
             $table->timestamps();
+        });
 
+       Schema::table('clubs', function (Blueprint $table) {
             $table->foreign('gym_id')->references('id')->on('gyms');
         });
     }
