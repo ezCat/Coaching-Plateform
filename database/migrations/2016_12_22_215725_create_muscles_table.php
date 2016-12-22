@@ -15,7 +15,13 @@ class CreateMusclesTable extends Migration
     {
         Schema::create('muscles', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('severity_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('muscles', function (Blueprint $table) {
+            $table->foreign('severity_id')->references('id')->on('severities');
         });
     }
 

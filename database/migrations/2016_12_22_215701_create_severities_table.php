@@ -15,7 +15,8 @@ class CreateSeveritiesTable extends Migration
     {
         Schema::create('severities', function (Blueprint $table) {
             $table->increments('id');
-            $table->timestamps();
+            $table->string('name');
+            $table->string('color');
         });
     }
 

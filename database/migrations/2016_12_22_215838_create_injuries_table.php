@@ -19,14 +19,14 @@ class CreateInjuriesTable extends Migration
             $table->date('date_recover_injury');
             $table->integer('player_id')->unsigned();
             $table->integer('team_id')->unsigned();
-            $table->integer('pathologies_id')->unsigned();
+            $table->integer('pathology_id')->unsigned();
             $table->timestamps();
         });
 
         Schema::table('injuries', function (Blueprint $table) {
             $table->foreign('player_id')->references('id')->on('players');
             $table->foreign('team_id')->references('id')->on('teams');
-            $table->foreign('pathologies_id')->references('id')->on('pathologies');
+            $table->foreign('pathology_id')->references('id')->on('pathologies');
         });
     }
 

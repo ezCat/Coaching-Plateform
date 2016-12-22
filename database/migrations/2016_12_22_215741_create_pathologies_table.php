@@ -15,7 +15,13 @@ class CreatePathologiesTable extends Migration
     {
         Schema::create('pathologies', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('name');
+            $table->integer('muscle_id')->unsigned();
             $table->timestamps();
+        });
+
+        Schema::table('pathologies', function (Blueprint $table) {
+            $table->foreign('muscle_id')->references('id')->on('muscles');
         });
     }
 
