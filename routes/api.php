@@ -40,4 +40,12 @@ Route::group(['prefix' => 'player'], function(){
     Route::put('update', 'PlayerController@update');
 });
 
+Route::group(['prefix' => 'team'], function(){
+    Route::get('show', 'TeamController@show');
+    Route::get('index', 'TeamController@index');
+    Route::post('store', 'TeamController@store');
+    Route::post('destroy', 'TeamController@destroy');
+    Route::put('update', 'TeamController@update');
+});
+
 

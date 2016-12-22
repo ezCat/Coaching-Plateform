@@ -18,6 +18,10 @@ class Team extends Model
         return $this->hasOne('App\Category');
     }
 
+    public function clubs() {
+        return $this->hasOne('App\Clubs');
+    }
+
     public function players() {
         return $this->belongsToMany('App\Player');
     }
