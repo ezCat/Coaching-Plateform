@@ -12,14 +12,14 @@ class CreateTeamsPlayersTable extends Migration
      */
     public function up()
     {
-        Schema::create('teams_players', function (Blueprint $table) {
+        Schema::create('team_player', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('player_id')->unsigned();
             $table->integer('team_id')->unsigned();
             $table->timestamps();
         });
 
-        Schema::table('teams_players', function (Blueprint $table) {
+        Schema::table('team_player', function (Blueprint $table) {
             $table->foreign('player_id')->references('id')->on('players');
             $table->foreign('team_id')->references('id')->on('teams');
         });
@@ -32,6 +32,6 @@ class CreateTeamsPlayersTable extends Migration
      */
     public function down()
     {
-        Schema::drop('teams_players');
+        Schema::drop('team_player');
     }
 }

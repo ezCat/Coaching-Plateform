@@ -12,14 +12,14 @@ class CreateUsersTeamsTable extends Migration
      */
     public function up()
     {
-        Schema::create('users_teams', function (Blueprint $table) {
+        Schema::create('user_team', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('team_id')->unsigned();
             $table->timestamps();
         });
 
-        Schema::table('users_teams', function (Blueprint $table) {
+        Schema::table('user_team', function (Blueprint $table) {
 
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('team_id')->references('id')->on('teams');
@@ -33,6 +33,6 @@ class CreateUsersTeamsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('users_teams');
+        Schema::drop('user_team');
     }
 }
