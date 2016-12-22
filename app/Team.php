@@ -13,4 +13,12 @@ class Team extends Model
     public function documents() {
         return $this->hasMany('App\Document');
     }
+
+    public function categories() {
+        return $this->hasOne('App\Category');
+    }
+
+    public function players() {
+        return $this->belongsToMany('App\Player');
+    }
 }

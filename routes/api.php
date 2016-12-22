@@ -32,4 +32,12 @@ Route::group(['prefix' => 'category'], function(){
     Route::put('update', 'CategoryController@update');
 });
 
+Route::group(['prefix' => 'player'], function(){
+    Route::get('show', 'PlayerController@show');
+    Route::get('index', 'PlayerController@index');
+    Route::post('store', 'PlayerController@store');
+    Route::post('destroy', 'PlayerController@destroy');
+    Route::put('update', 'PlayerController@update');
+});
+
 
