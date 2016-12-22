@@ -24,4 +24,12 @@ Route::group(['prefix' => 'club'], function(){
     Route::put('update', 'ClubController@update');
 });
 
+Route::group(['prefix' => 'category'], function(){
+    Route::get('show', 'CategoryController@show');
+    Route::get('index', 'CategoryController@index');
+    Route::post('store', 'CategoryController@store');
+    Route::post('destroy', 'CategoryController@destroy');
+    Route::put('update', 'CategoryController@update');
+});
+
 
