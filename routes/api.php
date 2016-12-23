@@ -48,4 +48,12 @@ Route::group(['prefix' => 'team'], function(){
     Route::put('update', 'TeamController@update');
 });
 
+Route::group(['prefix' => 'reminder'], function(){
+    Route::get('show', 'ReminderController@show');
+    Route::get('index', 'ReminderController@index');
+    Route::post('store', 'ReminderController@store');
+    Route::post('destroy', 'ReminderController@destroy');
+    Route::put('update', 'ReminderController@update');
+});
+
 
