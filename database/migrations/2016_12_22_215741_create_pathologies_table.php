@@ -17,11 +17,13 @@ class CreatePathologiesTable extends Migration
             $table->increments('id');
             $table->string('name');
             $table->integer('muscle_id')->unsigned();
+            $table->integer('severity_id')->unsigned();
             $table->timestamps();
         });
 
         Schema::table('pathologies', function (Blueprint $table) {
             $table->foreign('muscle_id')->references('id')->on('muscles');
+            $table->foreign('severity_id')->references('id')->on('severities');
         });
     }
 
