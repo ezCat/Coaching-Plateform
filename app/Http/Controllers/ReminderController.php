@@ -19,6 +19,7 @@ class ReminderController extends Controller
         $reminder->weekly_date = $request->weekly_date;
         $reminder->icon = $request->icon;
         $reminder->content = $request->content;
+        $reminder->color = $request->color;
         $reminder->team_id = $request->team_id;
 
         if ($reminder->save()) return "OK";
@@ -37,6 +38,7 @@ class ReminderController extends Controller
         $reminder->weekly_date = $request->weekly_date;
         $reminder->icon = $request->icon;
         $reminder->content = $request->content;
+        $reminder->color = $request->color;
         $reminder->team_id = $request->team_id;
         $reminder->save();
     }
