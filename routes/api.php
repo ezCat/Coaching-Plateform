@@ -48,4 +48,12 @@ Route::group(['prefix' => 'team'], function(){
     Route::put('update', 'TeamController@update');
 });
 
+Route::group(['prefix' => 'injury'], function(){
+    Route::get('show', 'InjuryController@show');
+    Route::get('index', 'InjuryController@index');
+    Route::post('store', 'InjuryController@store');
+    Route::post('destroy', 'InjuryController@destroy');
+    Route::put('update', 'InjuryController@update');
+});
+
 
