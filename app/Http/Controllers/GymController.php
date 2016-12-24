@@ -34,7 +34,8 @@ class GymController extends Controller
         $gym->name = $request->name;
         $gym->adress = $request->adress;
         $gym->location = $request->location;
-        $gym->save();
+        if ($gym->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)

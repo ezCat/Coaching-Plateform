@@ -34,7 +34,8 @@ class TeamController extends Controller
         $team->name = $request->name;
         $team->category_id = $request->category_id;
         $team->club_id = $request->club_id;
-        $team->save();
+        if ($team->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)
