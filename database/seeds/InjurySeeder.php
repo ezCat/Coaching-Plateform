@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Seeder;
 
-class InjuriesSeeder extends Seeder
+class InjurySeeder extends Seeder
 {
     /**
      * Run the database seeds.

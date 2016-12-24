@@ -62,6 +62,7 @@ Route::group(['prefix' => 'schedule'], function(){
     Route::post('destroy', 'ScheduleController@destroy');
     Route::put('update', 'ScheduleController@update');
 });
+
 Route::group(['prefix' => 'injury'], function(){
     Route::get('show', 'InjuryController@show');
     Route::get('index', 'InjuryController@index');
@@ -69,6 +70,7 @@ Route::group(['prefix' => 'injury'], function(){
     Route::post('destroy', 'InjuryController@destroy');
     Route::put('update', 'InjuryController@update');
 });
+
 Route::group(['prefix' => 'reminder'], function(){
     Route::get('show', 'ReminderController@show');
     Route::get('index', 'ReminderController@index');
