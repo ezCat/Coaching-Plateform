@@ -16,7 +16,7 @@ class CreateCalendarTable extends Migration
         Schema::create('calendars', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title');
-            $table->string('content');
+            $table->string('description');
             $table->string('begun_at');
             $table->string('finished_at');
             $table->string('location');

@@ -15,8 +15,13 @@ class CalendarController extends Controller
     public function store(Request $request)
     {
         $calendar = new Calendar;
-        $calendar->name = $request->name;
-
+        $calendar->title = $request->title;
+        $calendar->description = $request->description;
+        $calendar->begun_at = $request->begun_at;
+        $calendar->finished_at = $request->name;
+        $calendar->location = $request->location;
+        $calendar->calendar_type_id = $request->calendar_type_id;
+        $calendar->team_id = $request->team_id;
         if ($calendar->save()) return "OK";
         return "Nope";
     }
@@ -29,8 +34,15 @@ class CalendarController extends Controller
     public function update(Request $request)
     {
         $calendar = Calendar::find($request->id);
-        $calendar->name = $request->name;
-        $calendar->save();
+        $calendar->title = $request->title;
+        $calendar->description = $request->description;
+        $calendar->begun_at = $request->begun_at;
+        $calendar->finished_at = $request->name;
+        $calendar->location = $request->location;
+        $calendar->calendar_type_id = $request->calendar_type_id;
+        $calendar->team_id = $request->team_id;
+        if ($calendar->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)
