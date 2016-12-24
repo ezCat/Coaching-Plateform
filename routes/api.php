@@ -48,4 +48,11 @@ Route::group(['prefix' => 'team'], function(){
     Route::put('update', 'TeamController@update');
 });
 
+Route::group(['prefix' => 'schedule'], function(){
+    Route::get('show', 'ScheduleController@show');
+    Route::get('index', 'ScheduleController@index');
+    Route::post('store', 'ScheduleController@store');
+    Route::post('destroy', 'ScheduleController@destroy');
+    Route::put('update', 'ScheduleController@update');
+});
 
