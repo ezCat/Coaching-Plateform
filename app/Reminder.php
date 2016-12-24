@@ -10,6 +10,8 @@ class Reminder extends Model
 
     protected $table = "reminders";
 
+    public $timestamps = false;
+
     public function teams() {
         return $this->belongsToMany('App\Team');
     }
