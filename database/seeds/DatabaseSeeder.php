@@ -68,6 +68,7 @@ class DatabaseSeeder extends Seeder
 			'team_id' => 1
 		]);
 
+		$this->call(ScheduleSeeder::class);
 		$this->call(InjuriesSeeder::class);
     }
 }
