@@ -34,7 +34,8 @@ class ClubController extends Controller
         $club->name = $request->name;
         $club->main_color = $request->main_color;
         $club->gym_id = $request->gym_id;
-        $club->save();
+        if ($club->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)
