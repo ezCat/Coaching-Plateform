@@ -15,7 +15,6 @@ class InjuryController extends Controller
     public function store(Request $request)
     {
         $injury = new Injury;
-        $injury->name = $request->name;
         $injury->date_injury = $request->date_injury;
         $injury->date_recover_injury = $request->date_recover_injury;
         $injury->player_id = $request->player_id;
@@ -34,13 +33,13 @@ class InjuryController extends Controller
     public function update(Request $request)
     {
         $injury = Injury::find($request->id);
-        $injury->name = $request->name;
         $injury->date_injury = $request->date_injury;
         $injury->date_recover_injury = $request->date_recover_injury;
         $injury->player_id = $request->player_id;
         $injury->team_id = $request->team_id;
         $injury->pathology_id = $request->pathology_id;
-        $injury->save();
+        if ($injury->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)
