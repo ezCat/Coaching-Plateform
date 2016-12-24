@@ -71,5 +71,6 @@ class DatabaseSeeder extends Seeder
 		$this->call(ScheduleSeeder::class);
 		$this->call(InjuriesSeeder::class);
 		$this->call(CalendarSeeder::class);
+		$this->call(ReminderSeeder::class);
     }
 }
