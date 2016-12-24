@@ -52,12 +52,12 @@ class DatabaseSeeder extends Seeder
 			    'category_id' => $index,
 			]);
 
-			DB::table('users_teams')->insert([
+			DB::table('user_team')->insert([
 			    'user_id' => $index,
 			    'team_id' => $index,
 			]);
 
-			DB::table('teams_players')->insert([
+			DB::table('team_player')->insert([
 			    'team_id' => $index,
 			    'player_id' => $index,
 			]);
@@ -69,5 +69,6 @@ class DatabaseSeeder extends Seeder
 	]);
 
 		$this->call(ScheduleSeeder::class);
+		$this->call(InjuriesSeeder::class);
     }
 }
