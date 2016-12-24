@@ -30,7 +30,8 @@ class CategoryController extends Controller
     {
         $category = Category::find($request->id);
         $category->name = $request->name;
-        $category->save();
+        if ($category->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)
