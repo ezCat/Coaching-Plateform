@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Reminder extends Model
 {
-    protected $fillable = ['name', 'weekly_date', 'icon', 'content', 'color', 'team_id'];
+    protected $fillable = ['name', 'weekly_date', 'icon', 'description', 'color', 'team_id'];
 
     protected $table = "reminders";
 
