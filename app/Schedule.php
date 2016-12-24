@@ -10,6 +10,8 @@ class Schedule extends Model
 
     protected $table = "schedules";
 
+    public $timestamps = false;
+
     public function teams() {
         return $this->belongsToMany('App\Team');
     }
