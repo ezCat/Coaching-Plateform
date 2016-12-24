@@ -16,9 +16,9 @@ class CreateSchedulesTable extends Migration
         Schema::create('schedules', function (Blueprint $table) {
             $table->increments('id');
             $table->dateTime('date_match');
-            $table->increments('club_id')->unsigned();
-            $table->increments('place_id')->unsigned();
-            $table->increments('team_id')->unsigned();
+            $table->integer('club_id')->unsigned();
+            $table->integer('place_id')->unsigned();
+            $table->integer('team_id')->unsigned();
         });
 
         Schema::table('schedules', function (Blueprint $table) {
