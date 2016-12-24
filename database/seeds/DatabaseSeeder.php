@@ -67,5 +67,7 @@ class DatabaseSeeder extends Seeder
 		'link' => 'https://drive.google.com/open?id=0Bwg_0Xqlmx88dk1WYVJzY1Rtb3c',
 		'team_id' => 1
 	]);
+
+		$this->call(ScheduleSeeder::class);
     }
 }

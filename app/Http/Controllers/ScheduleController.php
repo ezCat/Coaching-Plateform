@@ -36,7 +36,8 @@ class ScheduleController extends Controller
         $schedule->club_id = $request->club_id;
         $schedule->team_id = $request->team_id;
         $schedule->place_id = $request->place_id;
-        $schedule->save();
+        if ($schedule->save()) return 'OK';
+        return "Nope";
     }
 
     public function destroy(Request $request)
