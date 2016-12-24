@@ -34,7 +34,8 @@ class DocumentController extends Controller
         $document->name = $request->name;
         $document->link = $request->link;
         $document->team_id = $request->team_id;
-        $document->save();
+        if ($document->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)

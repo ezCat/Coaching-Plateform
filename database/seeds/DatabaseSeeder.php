@@ -52,20 +52,25 @@ class DatabaseSeeder extends Seeder
 			    'category_id' => $index,
 			]);
 
-			DB::table('users_teams')->insert([
+			DB::table('user_team')->insert([
 			    'user_id' => $index,
 			    'team_id' => $index,
 			]);
 
-			DB::table('teams_players')->insert([
+			DB::table('team_player')->insert([
 			    'team_id' => $index,
 			    'player_id' => $index,
 			]);
-	}
-	DB::table('documents')->insert([
-		'name' => $faker->word,
-		'link' => 'https://drive.google.com/open?id=0Bwg_0Xqlmx88dk1WYVJzY1Rtb3c',
-		'team_id' => 1
-	]);
+		}
+		DB::table('documents')->insert([
+			'name' => $faker->word,
+			'link' => 'https://drive.google.com/open?id=0Bwg_0Xqlmx88dk1WYVJzY1Rtb3c',
+			'team_id' => 1
+		]);
+
+		$this->call(ScheduleSeeder::class);
+		$this->call(InjuriesSeeder::class);
+		$this->call(CalendarSeeder::class);
+		$this->call(ReminderSeeder::class);
     }
 }

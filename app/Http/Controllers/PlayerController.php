@@ -38,7 +38,8 @@ class PlayerController extends Controller
         $player->birth_date = $request->birth_date;
         $player->position = $request->position;
         $player->experience = $request->experience;
-        $player->save();
+        if ($player->save()) return "OK";
+        return "Nope";
     }
 
     public function destroy(Request $request)
