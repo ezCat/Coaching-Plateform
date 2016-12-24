@@ -19,6 +19,7 @@ class CreateRemindersTable extends Migration
             $table->text('description');
             $table->string('icon');
             $table->string('title');
+            $table->string('color');
             $table->integer('team_id')->unsigned();
         });
 

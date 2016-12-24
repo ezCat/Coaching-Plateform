@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+titlespace App\Http\Controllers;
 
 use App\Reminder;
 use Illuminate\Http\Request;
@@ -15,8 +15,8 @@ class ReminderController extends Controller
     public function store(Request $request)
     {
         $reminder = new Reminder;
-        $reminder->name = $request->name;
-        $reminder->weekly_date = $request->weekly_date;
+        $reminder->title = $request->title;
+        $reminder->day = $request->day;
         $reminder->icon = $request->icon;
         $reminder->description = $request->description;
         $reminder->color = $request->color;
@@ -34,8 +34,8 @@ class ReminderController extends Controller
     public function update(Request $request)
     {
         $reminder = Reminder::find($request->id);
-        $reminder->name = $request->name;
-        $reminder->weekly_date = $request->weekly_date;
+        $reminder->title = $request->title;
+        $reminder->day = $request->day;
         $reminder->icon = $request->icon;
         $reminder->description = $request->description;
         $reminder->color = $request->color;

@@ -16,6 +16,7 @@ class ReminderSeeder extends Seeder
 			'description' => 'Hello',
 			'day' => 'lundi',
 			'icon' => 'fa fa-hand-o',
+			'color' => 'green',
 			'team_id' => 1
 		]);
     }
