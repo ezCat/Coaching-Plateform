@@ -17,4 +17,8 @@ class Schedule extends Model
     public function places() {
         return $this->hasOne('App\Place');
     }
+
+    public function clubs() {
+        return $this->hasOne('App\Club');
+    }
 }
