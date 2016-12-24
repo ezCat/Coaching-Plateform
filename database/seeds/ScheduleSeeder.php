@@ -20,7 +20,7 @@ class ScheduleSeeder extends Seeder
 			'color' => 'red'
 		]);
 
-		DB::table('schedule')->insert([
+		DB::table('schedules')->insert([
 			'date_match' => new DateTime(),
 			'club_id' => 1,
 			'team_id' => 1,
