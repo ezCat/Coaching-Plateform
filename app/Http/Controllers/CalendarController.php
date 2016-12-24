@@ -18,7 +18,7 @@ class CalendarController extends Controller
         $calendar->title = $request->title;
         $calendar->description = $request->description;
         $calendar->begun_at = $request->begun_at;
-        $calendar->finished_at = $request->name;
+        $calendar->finished_at = $request->finished_at;
         $calendar->location = $request->location;
         $calendar->calendar_type_id = $request->calendar_type_id;
         $calendar->team_id = $request->team_id;
@@ -37,7 +37,7 @@ class CalendarController extends Controller
         $calendar->title = $request->title;
         $calendar->description = $request->description;
         $calendar->begun_at = $request->begun_at;
-        $calendar->finished_at = $request->name;
+        $calendar->finished_at = $request->finished_at;
         $calendar->location = $request->location;
         $calendar->calendar_type_id = $request->calendar_type_id;
         $calendar->team_id = $request->team_id;
