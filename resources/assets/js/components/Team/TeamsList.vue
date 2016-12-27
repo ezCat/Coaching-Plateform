@@ -26,5 +26,6 @@
                     this.teams = response.data
                 });
             }
+        }
     }
 </script>
