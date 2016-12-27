@@ -1,6 +1,7 @@
 <template>
 <div>
     <h1>My Teams</h1>
+    <hr>
 
     <h4>Add a Team</h4>
         <label>Name</label>
@@ -16,17 +17,24 @@
         <br>
         <button class="btn btn-success" type="submit" @click="createTeam">Add</button>
         <button class="btn btn-primary" type="submit" @click="updateTeam">Edit</button>
-    <br>
 
-    <h4>All Teams</h4>
-    <ul class="list-group">
-        <li class="list-group-item" v-for="team in teams">
-            {{ team.name }}
-            <button @click="showTeam(team.id)" class="btn btn-primary btn-xs">Edit</button>
-            <button @click="deleteTeam(team.id, team.name)" class="btn btn-danger btn-xs">Delete</button>
-        </li>
-    </ul>
-    <button class="btn" @click="fetchTeamList">Get All Data</button>
+    <div style="height: 30px"></div>
+
+    <div class="row">
+        <div class="col-md-8"><h4>All Teams</h4></div>
+        <div class="col-md-4"><button style="float: right" class="btn" @click="fetchTeamList">Refresh</button></div>
+    </div>
+    <hr>
+        <ul class="list-group">
+            <li class="list-group-item" v-for="team in teams">
+                {{ team.name }}
+
+                <div style="float: right">
+                    <button @click="showTeam(team.id)" class="btn btn-primary btn-xs">Edit</button>
+                    <button @click="deleteTeam(team)" class="btn btn-danger btn-xs">Delete</button>
+                </div>
+            </li>
+        </ul>
 </div>
 </template>
 
@@ -76,6 +84,7 @@
                 this.team.name = ''
                 this.team.category_id = ''
                 this.team.club_id = ''
+                this.fetchTeamList()
             },
 
             updateTeam: function(id) {
@@ -84,6 +93,7 @@
                 this.team.name = ''
                 this.team.category_id = ''
                 this.team.club_id = ''
+                this.fetchTeamList()
             },
 
             showTeam: function(id) {
@@ -92,9 +102,11 @@
                 })
             },
 
-            deleteTeam: function (id, name) {
-                if (confirm('Delete this '+ name +' ?')) {
-                    this.$http.post('api/team/destroy?id=' + id)
+            deleteTeam: function (team) {
+                if (confirm('Delete this '+ team.name +' ?')) {
+                    this.$http.post('api/team/destroy?id=' + team.id)
+                    var index = this.teams.indexOf(team)
+                    this.teams.splice(index, 1)
                 }
             },
         }
