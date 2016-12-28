@@ -1,41 +1,36 @@
 <template>
-<div>
-    <h1>My Teams</h1>
-    <hr>
+    <div class="row">
+        <h2 style="margin-top: 20px">My Teams</h2>
+        <hr>
 
-    <h4>Add a Team</h4>
+        <h4>Add a Team</h4>
         <label>Name</label>
-        <input type="text" name="name" class="form-control" v-model="team.name"/>
+        <input type="text" name="name" v-model="team.name"/>
         <label>Club</label>
-        <select class="form-control" name="club_id" v-model="team.club_id">
+        <select name="club_id" v-model="team.club_id">
             <option v-for="club in clubs" v-bind:value="club.id">{{ club.name }}</option>
         </select>
         <label>Category</label>
-        <select class="form-control" name="category_id" v-model="team.category_id">
+        <select name="category_id" v-model="team.category_id">
             <option v-for="category in categories" v-bind:value="category.id">{{ category.name }}</option>
         </select>
         <br>
-        <button class="btn btn-success" type="submit" @click="createTeam">Add</button>
-        <button class="btn btn-primary" type="submit" @click="updateTeam">Edit</button>
+        <a class="button primary" @click.prevent="createTeam">Add</a>
+        <a class="button secondary" @click.prevent="updateTeam">Edit</a>
 
-    <div style="height: 30px"></div>
+        <div style="height: 30px"></div>
 
-    <div class="row">
-        <div class="col-md-8"><h4>All Teams</h4></div>
-        <div class="col-md-4"><button style="float: right" class="btn" @click="fetchTeamList">Refresh</button></div>
-    </div>
-    <hr>
+        <h4>All Teams</h4>
+        <hr>
         <ul class="list-group">
-            <li class="list-group-item" v-for="team in teams">
-                {{ team.name }}
-
-                <div style="float: right">
-                    <button @click="showTeam(team.id)" class="btn btn-primary btn-xs">Edit</button>
-                    <button @click="deleteTeam(team)" class="btn btn-danger btn-xs">Delete</button>
-                </div>
-            </li>
-        </ul>
-</div>
+            <dl v-for="team in teams">
+                <dt>{{ team.name }}</dt>
+                <dd>
+                    <a @click.prevent="showTeam(team.id)" class="button tiny secondary">Edit</a>
+                    <a @click.prevent="deleteTeam(team)" class="button tiny alert">Delete</a>
+                </dd>
+            </dl>
+    </div>
 </template>
 
 <script>
@@ -111,4 +106,5 @@
             },
         }
     }
+
 </script>
