@@ -10,6 +10,7 @@
 <body>
 <div id="app" class="container">
     <navbar></navbar>
+    <documents></documents>
     <teams></teams>
 </div>
 <script src="/js/jquery.js"></script>
