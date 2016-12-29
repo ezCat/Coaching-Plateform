@@ -32,6 +32,10 @@ Route::group(['prefix' => 'pathology'], function(){
     Route::get('index', 'PathologyController@index');
 });
 
+Route::group(['prefix' => 'calendar/type'], function(){
+    Route::get('index', 'CalendarTypeController@index');
+});
+
 Route::group(['prefix' => 'category'], function(){
     Route::get('show', 'CategoryController@show');
     Route::get('index', 'CategoryController@index');

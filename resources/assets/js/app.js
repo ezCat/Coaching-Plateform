@@ -9,6 +9,7 @@ Vue.component('injuries', require('./components/Injury/Injuries.vue'));
 Vue.component('clubs', require('./components/Club/Clubs.vue'));
 Vue.component('gyms', require('./components/Gym/Gyms.vue'));
 Vue.component('players', require('./components/Player/Players.vue'));
+Vue.component('calendars', require('./components/Calendar/Calendars.vue'));
 
 const app = new Vue({
     el: '#app'
