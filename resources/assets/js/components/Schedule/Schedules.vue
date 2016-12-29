@@ -24,7 +24,13 @@
         <hr>
         <ul class="list-group">
             <dl v-for="schedule in schedules">
-                <dt>{{ schedule.date_match }}</dt>
+                <dt>
+                    <span class="[round radius secondary] label">
+                        {{ schedule.place_id }}
+                    </span>
+                </dt>
+                <dd>{{ schedule.date_match }}</dd>
+                <dd>{{ schedule.club_id }}</dd>
                 <dd>
                     <a @click.prevent="showSchedule(schedule.id)" class="button tiny secondary">Edit</a>
                     <a @click.prevent="deleteSchedule(schedule)" class="button tiny alert">Delete</a>
@@ -99,7 +105,7 @@
             },
 
             deleteSchedule: function (schedule) {
-                if (confirm('Delete schedule : '+ schedule.name +' ?')) {
+                if (confirm('Delete game intended the : '+ schedule.date_match +' ?')) {
                     this.$http.post('api/schedule/destroy?id=' + schedule.id)
                     var index = this.schedules.indexOf(schedule)
                     this.schedules.splice(index, 1)
