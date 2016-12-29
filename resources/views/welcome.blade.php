@@ -10,6 +10,7 @@
 <body>
 <div id="app" class="container">
     <navbar></navbar>
+    <injuries></injuries>
     <reminders></reminders>
     <schedules></schedules>
     <documents></documents>
