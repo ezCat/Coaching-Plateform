@@ -28,6 +28,10 @@ Route::group(['prefix' => 'place'], function(){
     Route::get('index', 'PlaceController@index');
 });
 
+Route::group(['prefix' => 'pathology'], function(){
+    Route::get('index', 'PathologyController@index');
+});
+
 Route::group(['prefix' => 'category'], function(){
     Route::get('show', 'CategoryController@show');
     Route::get('index', 'CategoryController@index');
