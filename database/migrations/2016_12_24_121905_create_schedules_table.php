@@ -24,7 +24,7 @@ class CreateSchedulesTable extends Migration
         Schema::table('schedules', function (Blueprint $table) {
             $table->foreign('club_id')->references('id')->on('clubs');
             $table->foreign('place_id')->references('id')->on('places');
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
         });
     }
 

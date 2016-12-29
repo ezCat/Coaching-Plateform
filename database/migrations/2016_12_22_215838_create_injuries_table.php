@@ -24,8 +24,8 @@ class CreateInjuriesTable extends Migration
         });
 
         Schema::table('injuries', function (Blueprint $table) {
-            $table->foreign('player_id')->references('id')->on('players');
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('player_id')->references('id')->on('players')->onDelete('cascade');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->foreign('pathology_id')->references('id')->on('pathologies');
         });
     }

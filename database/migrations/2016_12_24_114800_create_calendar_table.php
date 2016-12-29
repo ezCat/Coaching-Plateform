@@ -26,7 +26,7 @@ class CreateCalendarTable extends Migration
         });
 
         Schema::table('calendars', function (Blueprint $table) {
-            $table->foreign('team_id')->references('id')->on('teams');
+            $table->foreign('team_id')->references('id')->on('teams')->onDelete('cascade');
             $table->foreign('calendar_type_id')->references('id')->on('calendar_types');
         });
     }

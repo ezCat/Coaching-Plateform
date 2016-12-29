@@ -22,8 +22,8 @@ class CreatePathologiesTable extends Migration
         });
 
         Schema::table('pathologies', function (Blueprint $table) {
-            $table->foreign('muscle_id')->references('id')->on('muscles');
-            $table->foreign('severity_id')->references('id')->on('severities');
+            $table->foreign('muscle_id')->references('id')->on('muscles')->onDelete('cascade');
+            $table->foreign('severity_id')->references('id')->on('severities')->onDelete('cascade');
         });
     }
 
