@@ -1,6 +1,16 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
 
-// Fonts
+@font-face {
+  font-family: 'Bariol';
+  src: url('fonts/bariol_regular_italic-webfont.woff2') format('woff2'),
+  url('fonts/bariol_regular_italic-webfont.woff') format('woff'),
+  url('fonts/bariol_regular_italic-webfont.ttf') format('truetype');
+}
+
 @import "settings";
 
 @import "node_modules/foundation-sites/assets/foundation";
 
+.title-bar-title {
+  margin-left: 20px;
+}

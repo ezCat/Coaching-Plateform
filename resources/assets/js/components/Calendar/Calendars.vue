@@ -24,16 +24,30 @@
 
         <h4>All Calendars</h4>
         <hr>
-        <ul class="list-group">
-            <dl v-for="calendar in calendars">
-                <dt>{{ calendar.title }}</dt>
-                <dd>{{ calendar.description }}</dd>
-                <dd>From : {{ calendar.begun_at }} to : {{ calendar.finished_at }}</dd>
-                <dd>
+        <table></table>
+        <table>
+            <thead>
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Begun at</th>
+                <th>Finished at</th>
+                <th>Actions</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="calendar in calendars">
+                <td>{{ calendar.title }}</td>
+                <td>{{ calendar.description }}</td>
+                <td>{{ calendar.begun_at }}</td>
+                <td>{{ calendar.finished_at }}</td>
+                <td>
                     <a @click.prevent="showCalendar(calendar.id)" class="button tiny secondary">Edit</a>
                     <a @click.prevent="deleteCalendar(calendar)" class="button tiny alert">Delete</a>
-                </dd>
-            </dl>
+                </td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 </template>
 
