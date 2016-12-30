@@ -13,12 +13,12 @@
         </div>
         <div class="top-bar-right">
             <ul class="menu">
-                <li><a href="#"><i class="fa fa-home"></i> HOME</a></li>
-                <li><a href="#"><i class="fa fa-bell"></i> REMINDER</a></li>
-                <li><a href="#"><i class="fa fa-calendar"></i> CALENDAR</a></li>
-                <li><a href="#"><i class="fa fa-folder"></i> DOCUMENTS</a></li>
-                <li><a href="#"><i class="fa fa-calendar-o"></i> SCHEDULE</a></li>
-                <li><a href="#"><i class="fa fa-medkit"></i> INJURIES</a></li>
+                <li><router-link to="/"><i class="fa fa-home"></i> HOME</router-link></li>
+                <li><router-link to="/reminder"><i class="fa fa-bell"></i> REMINDER</router-link></li>
+                <li><router-link to="/calendar"><i class="fa fa-calendar"></i> CALENDAR</router-link></li>
+                <li><router-link to="/documents"><i class="fa fa-folder"></i> DOCUMENTS</router-link></li>
+                <li><router-link to="/schedule"><i class="fa fa-calendar-o"></i> SCHEDULE</router-link></li>
+                <li><router-link to="/injuries"><i class="fa fa-medkit"></i> INJURIES</router-link></li>
             </ul>
         </div>
     </div>

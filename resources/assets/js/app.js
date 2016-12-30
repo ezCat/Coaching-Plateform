@@ -1,16 +1,39 @@
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
+
+Vue.use(VueResource)
+Vue.use(VueRouter)
+
 require('./bootstrap');
 
-Vue.component('navbar', require('./components/Layout/Navbar.vue'));
-Vue.component('teams', require('./components/Team/Teams.vue'));
-Vue.component('documents', require('./components/Document/Documents.vue'));
-Vue.component('schedules', require('./components/Schedule/Schedules.vue'));
-Vue.component('reminders', require('./components/Reminder/Reminders.vue'));
-Vue.component('injuries', require('./components/Injury/Injuries.vue'));
-Vue.component('clubs', require('./components/Club/Clubs.vue'));
-Vue.component('gyms', require('./components/Gym/Gyms.vue'));
-Vue.component('players', require('./components/Player/Players.vue'));
-Vue.component('calendars', require('./components/Calendar/Calendars.vue'));
+const router = new VueRouter({
+    mode: 'hash',
+    routes: [{
+        path: '/'
+    }, {
+        path: '/admin/teams',
+        component: require('./components/Team/Teams.vue')
+    }, {
+        path: '/calendar',
+        component: require('./components/Calendar/Calendars.vue')
+    }, {
+        path: '/documents',
+        component: require('./components/Document/Documents.vue')
+    }, {
+        path: '/schedule',
+        component: require('./components/Schedule/Schedules.vue')
+    }, {
+        path: '/reminder',
+        component: require('./components/Reminder/Reminders.vue')
+    }, {
+        path: '/injuries',
+        component: require('./components/Injury/Injuries.vue')
+    }]
+})
 
-const app = new Vue({
-    el: '#app'
-});
+new Vue({
+    el: '#app',
+    router,
+    render: h => h(require('./components/App.vue'))
+})

@@ -8,18 +8,7 @@
     <title>One pager</title>
 </head>
 <body>
-<div id="app" class="container">
-    <navbar></navbar>
-    <calendars></calendars>
-    <players></players>
-    <gyms></gyms>
-    <clubs></clubs>
-    <injuries></injuries>
-    <reminders></reminders>
-    <schedules></schedules>
-    <documents></documents>
-    <teams></teams>
-</div>
+<div id="app"></div>
 <script src="/js/jquery.js"></script>
 <script src="/js/foundation.js"></script>
 <script src="/js/app.js"></script>
